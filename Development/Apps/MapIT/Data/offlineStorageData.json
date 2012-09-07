@@ -1,0 +1,55 @@
+ShareITOfflineStorage = {	"groupsList":[ {	"userID"="U1",
+												"userName":"",
+												"groups":[{	"grpID":"GRP1",
+															"grpName":"My Office",
+															"createdBy":"U1",
+															"sharedWith":[
+																	{"userID":"U2","userName":""},
+																	{"userID":"U3","userName":""}
+																	]},
+														{	"grpID":"GRP2",
+															"grpName":"My Room",
+															"createdBy":"U1",
+															"sharedWith":[
+																	{"userID":"U2","userName":""},
+																	{"userID":"U4","userName":""}
+																	]}
+														]
+											},
+											{	"userID"="U2",
+												"userName":"",
+												"Groups":[{	"GrpID":"GRP3",
+															"GrpName":"World Tour",
+															"createdBy":"U2",
+															"sharedWith":[
+																	{"userID":"U1","userName":""},
+																	{"userID":"U4","userName":""}
+																	]}
+														]
+
+											}],
+							"Transactions":[	{	"transactionID":"T123",
+													"grpID":"GRP1"
+													"description":"",
+													"date":"",
+													"location": {	"latitude": "0", 
+																	"longitude": "0",
+																	"radius": {
+																		  "unit": "m",
+																		  "text": "1000"
+																			}
+																},
+													"transactionType": {
+														  "code": "ATM",
+														  "text": "atm"
+														},
+													"amount": {
+														  "currency": "AUD",
+														  "signed": "40",
+														  "unsigned": "40",
+														  "sign": "DR"
+														}
+													"shared":[{userID:"U1"},{userID:"U2"},{userID:"U3"}]
+												}
+										]
+							

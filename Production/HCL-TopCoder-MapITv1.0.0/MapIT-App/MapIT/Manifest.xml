@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns="http://commbank.com.au/appstore/manifest.v1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <app>
+    <appId>CommBank.MapIT</appId>
+    <appName>Map !T </appName>
+    <version>1.0.0</version>
+    <publisherId>HCL</publisherId>
+    <publisherName>HCL Technologies</publisherName>
+    <description>Location Based Financial Spend Pattern</description>
+    <versionNotes>
+This version of App uses sample data provided for competition and it is a basic version of our idea to understand financial spending pattern of our customer.
+hence, no complex installation procedure is required,simply update environment.xml of App Store.
+</versionNotes>
+   <appIcon>~/images/icon.png</appIcon>
+		<screenshots>
+			<screenshot>~/images/screenshot1.png</screenshot>
+			<screenshot>~/images/screenshot2.png</screenshot>
+		</screenshots>
+    <themes>
+      <container>
+        <supports name="Sections" />
+        <supports name="Form" />
+      </container>
+    </themes>
+    <exposes>
+      <ui interfaceId="ContainerLaunch" interfaceVersion="1" resolvesTo="~/Default.html">
+        <parameters></parameters>
+        <permittedConsumers>
+          <container xsi:type="AnyContainer"/>
+          <user xsi:type="UserAnonymous"/>
+        </permittedConsumers>
+      </ui>
+    </exposes>
+  </app>
+</manifest>

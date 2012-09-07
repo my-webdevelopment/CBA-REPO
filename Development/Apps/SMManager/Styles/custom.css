@@ -1,0 +1,591 @@
+@CHARSET "ISO-8859-1";
+/*
+
+
+*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	
+}
+
+article, aside, figure, figure img, figcaption, hgroup,
+footer, header, nav, section {
+	display: block;
+}
+
+a img {border: 0;}
+
+figure {position: relative;}
+figure img {width: 100%;}
+
+ul, ol {
+	list-style: none;
+}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+body {
+	
+	font-size: 100%;
+	line-height: 1.7;
+	color: #555;
+	
+}
+
+h1  {
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0 0 1em 0;
+	line-height: 1.4;
+}
+
+h1.get-in-touch {
+
+}
+
+h2 {
+	font-weight: normal;
+	font-size: 1.2em;
+	margin: 0 0 1em 0;
+}
+
+h3 {
+	line-height: 1.4;
+	margin-bottom: 10px;
+}
+
+h4 {
+	font-size: 0.8em;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.6em;
+	margin-bottom: 0.6em;
+}
+
+h5 {
+	margin-bottom: 2%;
+	font-size: 0.9em;
+	line-height: 1.8;
+}
+
+p {
+	margin-bottom: 1em;
+	font-size: 0.9em;
+	line-height: 1.8;
+}
+
+
+a {
+	color: #e12e87;
+	/*text-shadow: #fff 0 1px 0;*/
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	
+}
+
+
+blockquote {
+	font-size: 1.4em;
+}
+
+
+blockquote p {
+	line-height: 1.5;
+}
+
+a:hover {
+	opacity: 0.7;
+}
+
+
+/*	Structure
+	------------------	*/
+
+/*  2-column, 320 px layout for smartphones (iPhone portrait)
+ *  ---------------------------------------
+ *  1      2
+ *  120px  264px   (24px gutters) */
+ 
+ 
+h1 {
+	font-size: 1.2em;
+}
+
+h6 {
+	font-size: 0.8em;
+}
+
+
+
+
+
+/*  3-column, 480 px layout for smartphones (iPhone landscape)
+ *  ---------------------------------------
+ *  1      2      3
+ *  120px  264px  408px   (24px gutters) */
+@media only screen and (min-width: 464px) and (max-width: 767px) {
+	
+	
+h1 {
+	font-size: 1.4em;
+}		
+	
+h2 {
+	font-size: 1.4em;
+}
+
+p {
+	font-size: 1em;
+}
+
+
+
+section {
+	
+}
+
+}
+
+
+
+/*  Default 5-column, 768 px layout for iPads (portrait), netbooks, and IE
+ *  (All other layouts inherit styles from this layout)
+ *  -----------------------------------------------------------
+ *  1      2      3      4      5
+ *  120px  264px  408px  552px  696px   (24px gutters) */
+ 
+@media only screen and (min-width: 768px) and (max-width: 935px) {
+	
+h1 {
+	font-size: 1.4em;
+}	
+
+h2 {
+	font-size: 1.4em;
+}	
+
+p {
+	font-size: 1em;
+}
+
+
+
+section {
+	
+}
+.app{
+min-width:800px;
+width:800px;
+margin:0 auto;
+}
+.app .header{height: 4em;padding: 1.137em 0 1.5em 1.5em;}
+.app .main .section .header{ height:4.5em;padding:0.5em 1.4em;}
+.headerTitle{font-size:1.5em;width:65%;float:left;line-height: 1.4em;}
+.headerAltTitle{font-size:.9em;color:#ddd;width:65%;float:left;line-height: 1em;}
+.headerCurrency{font-size:1.3em;color:#49A407;width:30%;float:left;text-align:left;line-height: 1.2em;margin-top:.1em;}
+.headerCurrency span{font-size:.7em;text-align:right;float:right}
+.headerCurrencyRed{font-size:1.1em;color:#EC745B;width:30%;float:left;text-align:left;line-height: 1.2em;margin-top:.3em;}
+.headerCurrencyRed span{font-size:.7em;text-align:right;float:right;}
+
+
+}
+
+
+
+
+/*  6-column, 936 px layout for desktops and laptops (also: iPad landscape)
+ *  ------------------------------------------------------------------------
+ *  1      2      3      4      5      6
+ *  120px  264px  408px  552px  696px  840px   (24px gutters) */
+
+@media only screen and (min-width: 936px) {
+	
+h1 {
+	font-size: 1.2em;
+}
+
+h2 {
+	font-size: 1.2em;
+}	
+	
+p {
+	font-size: 0.9em;
+}
+
+#container,#map,#details,#search {
+	width: 600px;
+	/*background-color: forestgreen;*/
+}
+
+section {
+	
+}
+
+.app{
+min-width:800px;
+width:800px;
+margin:0 auto;
+}
+.app .header{height: 4em;padding: 1.137em 0 1.5em 1.5em;}
+.app .main .section .header{ height:4.5em;padding:0.5em 1.4em;}
+.headerTitle{font-size:1.5em;width:65%;float:left;line-height: 1.4em;}
+.headerAltTitle{font-size:.9em;color:#ddd;width:65%;float:left;line-height: 1em;}
+.headerCurrency{font-size:1.3em;color:#49A407;width:30%;float:left;text-align:left;line-height: 1.2em;margin-top:.1em;}
+.headerCurrency span{font-size:.7em;text-align:right;float:right}
+.headerCurrencyRed{font-size:1.1em;color:#EC745B;width:30%;float:left;text-align:left;line-height: 1.2em;margin-top:.3em;}
+.headerCurrencyRed span{font-size:.7em;text-align:right;float:right;}
+#header2 .headerTitle{font-size:1.5em;width:40%;float:left;line-height: 1.4em;}
+#header2 .headerCurrency{font-size:1.3em;color:#49A407;width:50%;float:left;text-align:right;line-height: 1.2em;margin-top:.1em;}
+.budgetOverview .budgetListHeader{font-size:1.3em;width:100%;}
+.budgetOverview .budgetList{width:100%;height: 1.5em;}
+.budgetOverview .budgetList .budgetTag{width:25%;font-size:1em;float:left;}
+.budgetOverview .budgetList .budgetBar{width:55%;float:left;}
+.budgetOverview .budgetList .budgetValue {width:18%;float:left;text-align:right;font-size:1em;}
+.budgetOverview .budgetList .budgetValue .budgetLevel{font-size:0.8em;}
+}
+
+
+
+
+/*  8-column, 1224 px layout for desktops and laptops
+ *  ------------------------------------------------------------------------
+ *  1      2      3      4      5      6      7      8
+ *  120px  264px  408px  552px  696px  840px  984px  1128px   (24px gutters) */
+@media only screen and (min-width: 1224px) {
+	
+
+h1 {
+	font-size: 1.8em;
+}
+
+h2 {
+	font-size: 1.8em;
+	margin-bottom: 0.6em;
+}
+
+blockquote {
+	margin: 1em 0;
+}
+
+p {
+	font-size: 1em;
+}
+
+
+section {
+	
+}
+
+
+}
+
+
+
+
+/*  12-column, 1824 px layout for gigantic screens   (24px gutters)
+ *  ---------------------------------------------------------------------------------------
+ *  1      2      3      4      5      6      7      8       9       10      11      12
+ *  120px  264px  408px  552px  696px  840px  984px  1128px  1272px  1416px  1560px  1704px */
+
+@media only screen and (min-width: 1824px) {
+	#container,#map,#details,#search {
+	width: 600px;
+	/*background-color: forestgreen;*/
+	}
+}
+ 
+ 
+/*	Overrides for iPhone 4 
+	and other high device-pixel-ratio devices
+	-----------------------------------------	*/
+
+@media 
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+	
+}
+
+
+
+/*	Misc
+	------------------	*/
+ 
+.cprimary {    
+    margin-right:10px;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: bold;
+}
+.csecondary1 {    
+    min-width: 0%;
+}
+.currency1 {
+   float:right;
+   cursor:pointer;
+}
+.currency1:after{
+ content: url(../Styles/ASB/Images/arrow_next.png) no-repeat scroll 0 0 transparent;
+ margin-left: 5px;
+ vertical-align:middle; 
+}
+
+.field1:after{
+ content: url(../Styles/ASB/Images/arrow_next.png) no-repeat scroll 0 0 transparent;
+ vertical-align:middle; 
+ 
+}
+
+.field1{
+cursor:pointer;
+}
+
+.content{
+margin-bottom:2px !important;
+}
+
+ul li {
+display:inline;
+padding:0px !important;
+border-bottom:none !important;
+}
+
+
+
+.chinput {
+  border-bottom:1px dotted #000;
+}
+
+.chlabel{
+float:right;
+}
+
+
+	
+img,
+object,
+embed,
+iframe {	
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+object {
+	margin-bottom: 2em;
+}
+p.error {
+    color: red;
+    font-size: .7em;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    width: 100%;
+    float: none;
+}
+
+img {
+  max-width: 100%;
+}
+#map_canvas img { max-width:none; }
+
+/*---------------------------*/			
+        
+.progress-bar {
+	background-color: #efefef;
+	height: 0.8em;
+	padding: 2px;
+	width: 90%;
+	margin: .1em 0 .1em 0;			
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	-webkit-box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;
+	box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;           
+}
+
+.progress-bar span {
+	display: inline-block;
+	height: 100%;
+	background-color: #777;
+	margin-bottom: 5px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+	-webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+	box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
+	-webkit-transition: width .4s ease-in-out;
+	-moz-transition: width .4s ease-in-out;
+	-ms-transition: width .4s ease-in-out;
+	-o-transition: width .4s ease-in-out;
+	transition: width .4s ease-in-out;		
+}
+		
+/*---------------------------*/			
+
+.fill-blue span {
+	background-color: #34c2e3;   
+}
+
+.fill-orange span {
+	  background-color: #fecf23;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#fecf23), to(#fd9215));
+	  background-image: -webkit-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: -moz-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: -ms-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: -o-linear-gradient(top, #fecf23, #fd9215);
+	  background-image: linear-gradient(top, #fecf23, #fd9215);  
+}	
+
+.fill-green span {
+	  background-color: #a5df41;
+	  background-image: -webkit-gradient(linear, left top, left bottom, from(#a5df41), to(#4ca916));
+	  background-image: -webkit-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: -moz-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: -ms-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: -o-linear-gradient(top, #a5df41, #4ca916);
+	  background-image: linear-gradient(top, #a5df41, #4ca916);  
+}		
+
+/*---------------------------*/		
+
+.stripes span {
+	-webkit-background-size: 30px 30px;
+	-moz-background-size: 30px 30px;
+	background-size: 30px 30px;			
+	background-image: -webkit-gradient(linear, left top, right bottom,
+						color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent),
+						color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)),
+						color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent),
+						to(transparent));
+	background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);
+	background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+						transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+						transparent 75%, transparent);            
+	
+	-webkit-animation: animate-stripes 3s linear infinite;
+	-moz-animation: animate-stripes 3s linear infinite;       		
+}
+
+@-webkit-keyframes animate-stripes { 
+	0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+
+@-moz-keyframes animate-stripes {
+	0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+}
+
+/*---------------------------*/	 
+
+.shine span {
+	position: relative;
+}
+
+.shine span::after {
+	content: '';
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;			
+	
+	-webkit-animation: animate-shine 2s ease-out infinite;
+	-moz-animation: animate-shine 2s ease-out infinite; 			
+}
+
+@-webkit-keyframes animate-shine { 
+	0% {opacity: 0; width: 0;}
+	50% {opacity: .5;}
+	100% {opacity: 0; width: 95%;}
+}
+
+
+@-moz-keyframes animate-shine {
+	0% {opacity: 0; width: 0;}
+	50% {opacity: .5;}
+	100% {opacity: 0; width: 95%;}
+}
+
+/*---------------------------*/	 
+
+.glow span {
+	-moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+	-webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+	box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;
+	
+	-webkit-animation: animate-glow 1s ease-out infinite;
+	-moz-animation: animate-glow 1s ease-out infinite; 			
+}
+
+@-webkit-keyframes animate-glow {
+ 0% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;} 
+ 50% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .3) inset, 0 -5px 5px rgba(255, 255, 255, .3) inset;} 
+ 100% { -webkit-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;}
+ }
+
+@-moz-keyframes animate-glow {
+ 0% { -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;} 
+ 50% { -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .3) inset, 0 -5px 5px rgba(255, 255, 255, .3) inset;} 
+ 100% { -moz-box-shadow: 0 5px 5px rgba(255, 255, 255, .7) inset, 0 -5px 5px rgba(255, 255, 255, .7) inset;}
+ }
+		 
+		 
+/*scroll bar for safari & chrome*/
+
+::-webkit-scrollbar {
+width: 7px;
+height: 15px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+height: 1px;
+display: block;
+background-color: #696b6c;
+}
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment {
+height: 1px;
+display: block;
+background-color: #EFF7FF;
+}
+::-webkit-scrollbar-track-piece {
+background-color: #EFF7FF;
+}
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal
+{
+background-color: white;
+border: 1px solid #639ACE;
+-webkit-border-radius: 6px;
+}
