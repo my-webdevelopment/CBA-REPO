@@ -282,6 +282,7 @@
 			  return element.userID == uID ; // retain appropriate elements
 		  });
 		  var transObj = [];
+		  if(myTransactions.length > 0){
 		  $.each((myTransactions[0]).transaction,function(ind,ele){
 		  
 		   var myTransaction = jQuery.grep(data.tranRelation, function(element, index){
@@ -293,6 +294,7 @@
 			
 			
 		  });
+		  }
 		  
 		  
 			$('.headerCurrencyGreen').html("Should Receive:&nbsp;+$"+parseFloat(recAmt));
