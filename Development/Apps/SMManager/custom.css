@@ -1,0 +1,90 @@
+.cback {
+    text-align:right !important;
+    width:100% !important;
+    
+   }
+.cprimary {    
+    margin-right:10px;
+    text-transform: capitalize;
+    font-size: 12px;
+    font-weight: bold;
+}
+.csecondary1 {    
+    min-width: 0%;
+}
+.currency1 {
+   float:right;
+  /* cursor:pointer;*/
+   
+}
+
+.second a{
+color:#000000 !important;
+}
+.chinput a{
+color:#000000 !important;
+}
+.currency1:after{
+ /*content: url(./../../Styles/ASB/Images/arrow_next.png) no-repeat scroll 0 0 transparent;*/
+ margin-left: 5px;
+ vertical-align:middle; 
+}
+
+.field1:after{
+ content: url(./../../Styles/ASB/Images/arrow_next.png) no-repeat scroll 0 0 transparent;
+ vertical-align:middle; 
+ 
+}
+
+.field1{
+cursor:pointer;
+}
+
+.content{
+margin-bottom:2px !important;
+}
+
+ul li {
+display:inline;
+padding:0px !important;
+border-bottom:none !important;
+}
+
+#progress-bar {
+   background: url(percentage-bg.png) no-repeat left center;
+   width: 316px;
+   height: 39px;
+   margin: 0 auto;
+	}
+#progress-level {
+   background: url(progress.png) no-repeat left center;
+   width: 100%; /* SET THIS TO GET THE DESIRE LEVEL */
+   height: 39px;
+}
+
+.chinput {
+  border-bottom:1px dotted #000;
+}
+
+.chlabel{
+float:right;
+}
+
+.ui-widget {
+font-size:13px !important;
+}   
+
+
+.ui-tabs .ui-tabs-nav li {
+  float:right !important;
+}
+
+
+.overlay {
+ display:none;
+ position:absolute;
+ top:30%;
+ left:10%;
+ z-index:99000;
+ width:80%;
+}

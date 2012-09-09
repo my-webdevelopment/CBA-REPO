@@ -24,7 +24,7 @@
 		</custom>
     </themes>
     <exposes>
-      <ui interfaceId="ContainerLaunch" interfaceVersion="1" resolvesTo="~/Default.html">
+      <ui interfaceId="ContainerLaunch" interfaceVersion="1" resolvesTo="~/login.html">
         <parameters></parameters>
         <permittedConsumers>
           <app xsi:type="AnyApp"/>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Wish List</title>	
+ <link rel="stylesheet" type="text/css" href="../../Styles/ASB/Colour.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/ASB/Container.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/ASB/Form.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/ASB/Sections.css" />
+<link rel="stylesheet" type="text/css" href="../../Styles/ASB/Typography.css" />
+	
+</head>
+<body>
+    <div class="background"></div>
+    <div class="app">
+		<div class="header" id="header">
+			<h1>Wish List</h1>
+        </div>
+        
+		<div class="main">			
+			<form class="form" action="Default.htm" method="post">	
+			<div class="section">
+               <div class="collapsible">
+				  <div class="header" id="header1"><h5>Bike</h5> </div>  
+			    </div>	
+          
+                 <div class="content" style="display:none;">        <!-- .app .main .collapsible .content-->
+						  <div class="two-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							            TVS Apache
+								    </div>	
+                                              					
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  $2,000
+		                           </div>
+					           </div>
+					   </div>
+					   			
+		       </div>		  
+		  
+		  	<div class="content" style="display:none;">        <!-- .app .main .collapsible .content-->
+						  <div class="two-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							            Bajaj Pulsar
+								    </div>	
+                                                       						
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  $2,500
+		                           </div>
+					           </div>
+					   </div>
+					   			
+		       </div>		  
+		 </div>
+
+           <div class="section">
+
+	              <div class="collapsible">
+	                 <div class="header" id="header2"><h5>Gift</h5> </div>  <!-- .app .main .collapsible .header:hover-->	                   
+	              </div>
+          
+            
+		    <div class="content" style="display:none;">        <!-- .app .main .collapsible .content-->
+						  <div class="two-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							            Wathes
+								    </div>	
+                                                          
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  $500
+		                           </div>
+					           </div>
+					   </div>
+					   			
+		       </div>	
+                      <div class="content" style="display:none;">        <!-- .app .main .collapsible .content-->
+						  <div class="two-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							            Dresses
+								    </div>	
+                                                       						
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  $200
+		                           </div>
+					           </div>
+					   </div>
+					   			
+		       </div>		   			   
+           </div>
+		   
+
+           <div class="section">
+
+	   	              <div class="collapsible">
+	   	                 <div class="header" id="header3"><h5> Mobile </h5> </div>  <!-- .app .main .collapsible .header:hover-->	   	                                     
+                    </div>          		   		    	             
+						   
+						   
+				  <div class="content" style="display:none;">        <!-- .app .main .collapsible .content-->
+						  <div class="two-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							            Samsung Galaxy
+								    </div>	                                                        
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  $900
+		                           </div>
+					           </div>
+					   </div>
+                    				  
+			   </div>
+			   <div class="content" style="display:none;">        <!-- .app .main .collapsible .content-->
+						  <div class="two-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							            Sony X-Peria
+								    </div>	
+                                                          
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  $750
+		                           </div>
+					           </div>
+					   </div>
+		 </div>
+		 <div class="content">
+		   <div class="content" style="display:none;">
+		 <p>You have $500 so now you can buy dreeses</p>
+		 </div>
+		 			
+		</form>		
+		</div>
+  </div>
+    
+    <!-- scripts -->
+    
+    <script src="pagebus.js" type="text/javascript"></script>
+    <script src="jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="Framework.js" type="text/javascript"></script>
+	<script type="text/javascript">
+  $(function() {
+   
+      $("#header1,#header2,#header3").bind("click",function() {	     
+	      $(this).closest("div.section").children("div.content").toggle("slow");
+	  });
+   });
+   </script>
+    
+</body>
+</html>

@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>     
+   <title> What's New </title>
+   <style>
+.chtwo-column{
+border-bottom:1px dotted #000000 !important;
+}
+ </style>
+ </head>
+ <body>
+ <div class="background"></div>
+    <div class="app">	 		
+	<div class="header">
+			<h1>Accounts Overview</h1>
+      </div>
+         <div class="main">
+		    <form class="form" action="Default.htm" method="post">	           
+		   <div class="section">
+               <div class="collapsible">			   
+				  <div class="header" id="header1">
+					<h5><div class="headerTitle"> All Accounts </div><div class="headerCurrency" id="allaccounts">
+					<script id="allAccountsAvailableFunds" type="text/x-jsrender">
+					{{>available_money}}&nbsp;&nbsp;{{>available_currency}}
+					</script>
+					</div></h5>
+					
+					<div class="headerAltTitle">  All Transactions </div>
+				<div class="headerCurrencyRed" id="allliablities"> <script id="allAccountsLiabilities" type="text/x-jsrender">-
+					{{>liabilities_money}}&nbsp;&nbsp;{{>liabilities_currency}}
+					</script></div>					
+				  </div> 
+				</div>
+           
+		   
+		   <div class="content" id="content" style="display:none;">  
+		   <script class="allAccounts" type="text/x-jsrender">
+		   <!-- .app .main .collapsible .content-->
+						
+							
+						  <div class="two-column chtwo-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							           <a href="details.html?id={{>data.id}}">{{>data.name}}</a>
+								    </div>	
+                        
+                                    <div class="csecondary1">
+							            {{>data.accNumber}}
+							        </div>								
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  {{>data.currentBalance }}&nbsp;{{>data.currentBalanceSign}} 
+		                           </div>
+					           </div>
+					   </div>
+					  
+			</script>
+					   			
+		       </div>		  
+				  
+				  
+			   
+			   
+        </div>
+           <div class="section">
+
+	              <div class="collapsible">
+	               	   
+				  <div class="header" id="header2">
+					<h5><div class="headerTitle"> Budget <span class="monthYear">July, 2012</span></div><div class="headerCurrency">&nbsp;$324.00 / $1254.00</div></h5>
+					<div style="clear:both"></div>
+					<div class="progress-bar glow" id="pgbar"> <span style=""></span></div>
+					
+					</div> 				
+				  </div> 
+	             																							
+               
+
+               <div class="content budgetOverview" style="display:none;">        <!-- .app .main .collapsible .content-->		
+
+                          <div class="budgetListHeader">Budget Of Month</div>			
+                           <div class="budgetList">
+                                    <div class="budgetTag">Food</div> 
+									<div class="budgetBar"><div class="progress-bar glow" id="budgetLevel-1"> <span style=""></span></div></div>
+									<div class="budgetValue">$100 <span class="budgetLevel">Left</span></div> 									
+								    
+                                </div>
+							<div class="budgetList">
+                                    <div class="budgetTag">Groceries</div> 
+									<div class="budgetBar"><div class="progress-bar glow" id="budgetLevel-2"> <span style=""></span></div></div>
+									<div class="budgetValue">$120 <span class="budgetLevel">Left</span></div> 									
+								    
+                            </div>
+							<div class="budgetList">
+                                    <div class="budgetTag">Retail</div> 
+									<div class="budgetBar"><div class="progress-bar glow" id="budgetLevel-3"> <span style=""></span></div></div>
+									<div class="budgetValue">$220 <span class="budgetLevel">overflow</span></div> 							 </div>
+							<div class="budgetList">
+                                    <div class="budgetTag">Misc</div> 
+									<div class="budgetBar"><div class="progress-bar glow" id="budgetLevel-4"> <span style=""></span></div></div>
+									<div class="budgetValue">$420 <span class="budgetLevel">overflow</span></div> 							 </div>
+						
+					   			
+		       </div>		    
+
+	   
+			</div>	   
+ 			<div class="section">
+
+	              <div class="collapsible">
+	               	   
+				  <div class="header" id="header2">
+					<h5><div class="headerTitle"> <a href="buyit.html" title="More information">Plan a Purchase</div><div class="headerCurrency">&nbsp;</div></a> </h5>
+					<div style="clear:both"></div>
+					</div> 				
+				  </div> 
+			</div>   
+    
+		</form>
+
+</div>
+</div>
+	
+    <!-- which JS do i need to include -->
+    <script src="jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="pagebus.js" type="text/javascript"></script>
+    <script src="Framework.js" type="text/javascript"></script>
+	<script src="../../Scripts/jsrender.js" type="text/javascript"></script>
+	
+	<!-- your app scripts go here -->
+	<script src="Scripts/AllData.js" type="text/javascript"></script>
+    <script src="Scripts/SMManager.js" type="text/javascript"></script>
+	<script src="Navigation.js" type="text/javascript"></script>	
+	
+
+</body>
+</html>

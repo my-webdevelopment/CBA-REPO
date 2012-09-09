@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>     
+   <title> go Dutch </title>
+   <script src="Data/AllData.js" type="text/javascript"></script>
+   <style>
+
+ </style>
+ </head>
+ <body>
+ <div class="background"></div>
+<div class="app">
+		
+        <form class="form" method="post" action="Default.htm" >
+		<div class="main">
+			<div class="section">
+				<div class="header">
+				<h1><div class="title" style="float:left;width:50%;">Track Payments</div><div class="pendingPayments" style="float:right;width:50px;"><a href="#">P4</a></div><div class="newMessages" style="float:right;width:50px;"><a href="#">N2</a></div></h1>
+				</div>
+                
+					<div class="contentMessage" style="display:none;">
+						<fieldset>
+                           <div class="input">
+								<div class="description"></div>
+							</div>
+							
+						</fieldset>
+						
+						
+					</div>
+				
+			
+				
+                	 <div class="collapsible">			   
+				  <div class="header" id="header1">
+					<h5><div class="headerCurrency" ><span class="headerCurrencyGreen" style="float:left;width:50%;"></span><span class="headerCurrencyRed"style="float:right;width:50%;text-align:right"></span></div></h5>
+										
+				  </div> 
+				</div>
+           
+		   
+		   <div class="content contentTransactions" >        <!-- .app .main .collapsible .content-->
+						  <div class="two-column">		   
+		                        <div class="first">
+								<div class="csecondary1">
+							            31 Jun 2012        
+							        </div>
+							         <div class="cprimary">
+							           Team Lunch
+								    </div>
+									
+                        
+                                    <div class="csecondary1">
+							            <span>Shared with:<span> 
+										<div class="">
+										<span class="sharedFriend">You,</span>
+											<span class="sharedFriend">George,</span>
+											<span class="sharedFriend"> Joe,</span>
+											<span class="sharedFriend"> Martin</span>
+										</div>
+							        </div>								
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                  $50.00  <span class="eachTotal">$10.00/each, paid by You</span>
+		                           </div>
+					           </div>
+					   </div>
+					   
+					   <div class="two-column">		   
+		                        <div class="first">
+								<div class="csecondary1">
+							            31 Jun 2012        
+							        </div>
+							         <div class="cprimary">
+							           Team Lunch
+								    </div>
+									
+                        
+                                    <div class="csecondary1">
+							            <span>Shared with:<span> 
+										<div class="">
+										<span class="sharedFriend">You,</span>
+											<span class="sharedFriend">George,</span>
+											<span class="sharedFriend"> Joe,</span>
+											<span class="sharedFriend"> Martin</span>
+										</div>
+							        </div>								
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                   $50.00  <span class="eachTotal">$10.00/each, paid by You</span>
+		                           </div>
+					           </div>
+					   </div>
+					   
+					   <div class="two-column">		   
+		                        <div class="first">
+								<div class="csecondary1">
+							            31 Jun 2012        
+							        </div>
+							         <div class="cprimary">
+							           Team Lunch
+								    </div>
+									
+                        
+                                    <div class="csecondary1">
+							            <span>Shared with:<span> 
+										<div class="">
+										<span class="sharedFriend">You,</span>
+											<span class="sharedFriend">George,</span>
+											<span class="sharedFriend"> Joe,</span>
+											<span class="sharedFriend"> Martin</span>
+										</div>
+							        </div>								
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                   $50.00  <span class="eachTotal">$10.00/each, paid by You</span>
+		                           </div>
+					           </div>
+					   </div>
+					   			
+		       </div>		  
+				
+			</div>
+			
+			<div class="actions">
+		<div class="secondary">
+			<input type="button" value="Create" id="btnCreateForm" />
+			
+		</div>
+		<div class="primary">
+			<input type="button" value="Home" id="btnBack" />
+		</div>
+	</div>
+		</div>
+		</form>
+		
+		
+		
+    </div>
+	<script id="pendingPaymentsTmpl" type="text/html">
+						<fieldset>
+                           <div class="input" rel="{{>tID}}">
+								<div class=""> You have a pending payment of ${{>amount}} to {{>userName}} for "{{>description}}" on {{>time}} 
+								<div class="pay"><a href="#" >Pay Now</a></div> <div class="later"><a href="#" >i'll Pay Later</a></div></div>
+							</div>
+							
+						</fieldset>
+	</script>
+	
+	<script id="newPaymentsTmpl" type="text/html">
+						<fieldset>
+                           <div class="input" rel="{{>tID}}">
+								<div class=""> You got a new payment request of ${{>amount}} from {{>userName}} for "{{>description}}" on {{>time}} 
+								<div class="pay"><a href="#" >Pay Now</a></div> <div class="later"><a href="#" >i'll Pay Later</a></div></div>
+							</div>
+							
+						</fieldset>
+	</script>
+	
+	<script id="transactionTmpl" type="text/html">
+					 <div class="two-column">		   
+		                        <div class="first">
+								<div class="csecondary1">
+							           {{>time}}       
+							        </div>
+							         <div class="cprimary">
+							            {{>description}}  
+								    </div>
+									
+                        
+                                    <div class="csecondary1">
+							            <span>Shared with:<span> 
+										<div class="">
+										{{for shared}}
+												<span class="sharedFriend">{{>userName}}</span>,&nbsp;&nbsp;
+										{{/for}}
+										</div>
+							        </div>								
+							
+		                       </div>
+							   
+					           <div class="second">
+					               <div class="currency1">
+					                    ${{>amount}}    <span class="eachTotal">&nbsp;${{>eachAmount}}/each, paid by {{>paidBy}}</span>
+		                           </div>
+					           </div>
+					   </div>
+	</script>
+	
+    <!-- which JS do i need to include -->
+    
+	<script src="../../Styles/jquery-ui-1.8.23.custom.css" type="text/javascript"></script>
+    <script src="../../Scripts/pagebus/full/pagebus.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.2.js" type="text/javascript"></script>
+	 <script src="../../Scripts/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+	 <script src="../../Scripts/jsrender.js" type="text/javascript"></script>
+     <script src="../../Scripts/jquery.mockjax.js" type="text/javascript"></script>
+     <script src="Scripts/Framework.js" type="text/javascript"></script>
+	
+	<!-- your app scripts go here -->
+    <script src="Scripts/shareIT.js" type="text/javascript"></script>
+	
+	
+	<script type="text/javascript">
+	   $(function() {
+		 //$("form, a").fixAppURL();
+		   $("#header1").bind("click",function() {	     
+			  $(this).closest("div.section").children("div.content").toggle("slow");
+		  });
+		  var uID = sessionStorage.getItem('userID');
+		  var uName = sessionStorage.getItem('userName');
+		  
+		  if(sessionStorage.getItem('postStatus')){
+			  var confirmMsg = sessionStorage.getItem('postStatus');
+			  $('.contentMessage .description').html(confirmMsg);
+			  $('.contentMessage').show();
+		  }else{
+			  $('#contentMessage').hide();
+		  }
+		  
+		  sessionStorage.removeItem('postStatus');
+		  
+		  var pendingPay = jQuery.grep(data.tranRelation, function(element, index){
+			
+			  return element.suID == uID && element.isPaid == 0 && element.uID != uID ; // retain appropriate elements
+		  });
+		  
+		  var newMessages = jQuery.grep(data.tranRelation, function(element, index){
+			  return element.suID == uID && element.isSeen == 0 && element.uID != uID ; // retain appropriate elements
+		  });
+		  payAmt = 0;
+		 var payObj = [];
+		  $.each(pendingPay,function(ind,ele){
+			payAmt+=parseFloat(ele.eachAmount);
+			pendingData = jQuery.grep(data.data, function(element, index){
+			  return element.userID == ele.uID ; // retain appropriate elements
+			});
+			pendingDataTrans = jQuery.grep((pendingData[0]).transaction, function(element, index){
+			  return element.tID == ele.tID ; // retain appropriate elements
+			}); 
+			var theDate = new Date(ele.time);
+			time = theDate.toGMTString();			
+			
+			payObj.push({"tID":ele.tID,"uID":ele.uID,"amount":ele.eachAmount,"userName":(pendingData[0]).userName,"description":(pendingDataTrans[0]).description,"time":time})
+		  });
+		 var pendingReceive = jQuery.grep(data.tranRelation, function(element, index){
+			
+			  return element.uID == uID && element.isPaid == 0 && element.suID != uID ; // retain appropriate elements
+		  });
+		  recAmt = 0;
+		 
+		  $.each(pendingReceive,function(ind,ele){
+			recAmt+=parseFloat(ele.eachAmount);
+			
+		  });
+		   var receiveObj=[]
+		   $.each(newMessages,function(ind,ele){
+
+				receiveData = jQuery.grep(data.data, function(element, index){
+				  return element.userID == ele.uID ; // retain appropriate elements
+				});
+				receiveDataTrans = jQuery.grep((receiveData[0]).transaction, function(element, index){
+				  return element.tID == ele.tID ; // retain appropriate elements
+				}); 
+				var theDate = new Date(ele.time);
+				time = theDate.toGMTString();			
+				
+				receiveObj.push({"tID":ele.tID,"uID":ele.uID,"amount":ele.eachAmount,"userName":(receiveData[0]).userName,"description":(receiveDataTrans[0]).description,"time":time})
+		  });
+		  
+		  
+		  var myTransactions = jQuery.grep(data.data, function(element, index){
+			  return element.userID == uID ; // retain appropriate elements
+		  });
+		  var transObj = [];
+		  $.each((myTransactions[0]).transaction,function(ind,ele){
+		  
+		   var myTransaction = jQuery.grep(data.tranRelation, function(element, index){
+			  return element.tID == ele.tID ; // retain appropriate elements
+		   });
+		   var theDate = new Date((myTransaction[0]).time);
+				time = theDate.toGMTString();
+			transObj.push({"time":time,"description":ele.description,"amount":parseFloat(ele.amount).toFixed(2),"eachAmount":parseFloat(ele.amount/ele.count).toFixed(2),"paidBy":"You","shared":ele.shared})
+			
+			
+		  });
+		  
+		  
+			$('.headerCurrencyGreen').html("Should Receive:&nbsp;+$"+parseFloat(recAmt));
+			$('.headerCurrencyRed').html("Pending Payments:&nbsp;-$"+parseFloat(payAmt));
+		  
+		  $('.pendingPayments a').html('P-'+pendingPay.length);
+		  $('.newMessages a').html('M-'+newMessages.length);
+		  
+		  
+		  $('.pendingPayments a').click(function(){
+			$('.contentMessage').hide().html($('#pendingPaymentsTmpl').render(payObj)).toggle('slow');
+		  
+		  });
+		  
+		  $('.newMessages a').click(function(){
+			$('.contentMessage').hide().html($('#newPaymentsTmpl').render(receiveObj)).toggle('slow');
+		  
+		  });
+		  $('.contentTransactions').hide().html($('#transactionTmpl').render(transObj)).toggle('slow');
+		 
+		  $('.pay a').live('click',function(){
+			alert('lead to payment page')
+		  });
+		  $('.later a').live('click',function(){
+			alert('lead to later payment page')
+		  });
+		  
+		  $('#btnCreateForm').click(function(){
+			$("form").attr('action','create.html').fixAppURL()
+			$("form").submit();
+		  });
+		  $('#btnBack').click(function(){
+			$("form").attr('action','Default.html').fixAppURL()
+			$("form").submit();
+		  });
+		  
+	   });
+		
+	
+   </script>
+
+</body>
+</html>

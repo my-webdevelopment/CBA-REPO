@@ -334,12 +334,12 @@ section {
 }
 .currency1 {
    float:right;
-   cursor:pointer;
+   /*cursor:pointer;*/
 }
 .currency1:after{
- content: url(../Styles/ASB/Images/arrow_next.png) no-repeat scroll 0 0 transparent;
+ /*content: url(../Styles/ASB/Images/arrow_next.png) no-repeat scroll 0 0 transparent;
  margin-left: 5px;
- vertical-align:middle; 
+ vertical-align:middle; */
 }
 
 .field1:after{
@@ -372,7 +372,11 @@ border-bottom:none !important;
 float:right;
 }
 
-
+.cback {
+    text-align:right !important;
+    width:100% !important;
+    
+   }
 	
 img,
 object,

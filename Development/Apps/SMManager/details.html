@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>     
+   <title> What's New </title>   
+ </head>
+ <body>
+ <div class="background"></div>
+    <div class="app">	 		
+	<div class="header">
+			<h1>Transactions</h1>
+      </div>
+         <div class="main">
+		    <form class="form" action="Default.html" method="post">	
+           <div class="section">
+			   <div class="content" id="content"></div>
+			    <script class="allAccounts" type="text/x-jsrender">
+				
+				   <div class="input">
+				   <label>Account Name: &nbsp; {{>data.name}}</label>	
+				  
+				   <br />
+				   <label>Account Number: &nbsp;{{>data.accNumber}}</label>
+				  	   
+				   </div>
+				   
+				   </script>
+			   
+           </div>		   
+		   <div class="section">
+               <div class="collapsible">			   
+				  <div class="header" id="header1"><h5> Transaction Details </h5> </div>  <!-- .app .main .collapsible .header:hover-->
+				</div>
+           
+		   
+		   <div class="content" style="display:none;" id="content2"> 
+		   
+			  
+		       </div>	
+
+					
+	
+		</div>		
+		<script class="contextItemTemplate" type="text/x-jsrender">
+							<div class="two-column">		   
+		                        <div class="first">
+							         <div class="cprimary">
+							        {{>data.description}}
+									   <br />
+									   <span>{{>data.tag}}</span>
+									   
+								    </div>	
+                        
+                                    <div class="csecondary1">
+							            {{>data.date}}
+							        </div>								
+							
+		                       </div>
+							   
+					           <div class="second">
+					              <div class="currency1">{{>data.amount}}&nbsp;{{>data.currency}}</div>
+					           </div>
+					   </div>
+			
+			</script>
+          <div class="actions">
+		   <div class="primary cback"><a href="Default.html"><input type="button" value="Back"/><a></div>
+           </div>		  
+						
+		</form>
+
+</div>
+</div>
+
+
+ 
+    
+	
+	
+	 
+    <script src="pagebus.js" type="text/javascript"></script>
+    <script src="jquery-1.7.2.js" type="text/javascript"></script>
+	<script src="Framework.js" type="text/javascript"></script>
+	<script src="jquery-ui-1.8.23.custom/js/jquery-ui-1.8.23.custom.min.js" type="text/javascript"></script>
+	<script src="jquery.dateFormat.js" type="text/javascript"></script>
+	<script src="../../Scripts/jsrender.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="jquery-ui-1.8.23.custom/css/custom-theme/jquery-ui-1.8.23.custom.css" type="text/css" media="all"/>
+    
+	<script src="Navigation.js" type="text/javascript"></script>
+	<script src="Scripts/AllData.js" type="text/javascript"></script>
+	<script src="details.js" type="text/javascript"></script>
+	<script type="text/javascript">
+   $(function() {
+      $("#header1").bind("click",function() {	     
+	      $(this).closest("div.section").children("div.content").slideToggle("slow");
+	  });
+		
+   });
+   
+  
+	
+	
+   </script>
+
+ </body>
+</html>

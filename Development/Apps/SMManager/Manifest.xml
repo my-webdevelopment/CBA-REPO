@@ -2,11 +2,11 @@
 <manifest xmlns="http://commbank.com.au/appstore/manifest.v1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <app>
     <appId>CommBank.SMManager</appId>
-    <appName>Student Money Manager</appName>
+    <appName>SMManager</appName>
     <version>1.0.0</version>
     <publisherId>CBA</publisherId>
     <publisherName>Commonwealth Bank of Australia</publisherName>
-    <description>Student Money Manager</description>
+    <description>My First App</description>
     <versionNotes></versionNotes>
     <appIcon></appIcon>
     <screenshots>
@@ -17,14 +17,16 @@
         <supports name="Typography" />
         <supports name="Form" />
       </container>
+		
 		<custom fallback="basic">
 			<theme name="custom">
-			<link rel="stylesheet" href="Styles/custom.css"/>
+			<link rel="stylesheet" href="Styles/custom.css"/>		
 			</theme>
-		</custom>
+		</custom>		
+		
     </themes>
     <exposes>
-      <ui interfaceId="ContainerLaunch" interfaceVersion="1" resolvesTo="~/Home.html">
+      <ui interfaceId="ContainerLaunch" interfaceVersion="1" resolvesTo="~/Default.html">
         <parameters></parameters>
         <permittedConsumers>
           <app xsi:type="AnyApp"/>
@@ -33,5 +35,17 @@
         </permittedConsumers>
       </ui>
     </exposes>
+	  <invokes>
+        <ui interfaceId="Hello" use="required">
+          <bindings>
+            <app publisherId="CBA" appId="CommBank.HelloWorld" interfaceId="ContainerLaunch" interfaceVersion="1"/>
+          </bindings>
+        </ui>
+        <ui interfaceId="Bogus" use="optional">
+          <bindings>
+            <app publisherId="CBA" appId="CommBank.NoSuchApp" interfaceId="LaunchMe" interfaceVersion="1"/>
+          </bindings>
+        </ui>
+      </invokes>
   </app>
 </manifest>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>     
+   <title> go Dutch </title>
+   <style>
+
+ </style>
+ </head>
+ <body>
+ <div class="background"></div>
+    <div class="app">	 		
+	<div class="header">
+	<h1>Login</h1>
+    </div>
+    <div class="main">
+	<form class="form" method="post" action="Default.htm" >
+	<div class="actions">
+		<div class="input">
+		<div class="description">For demo purpose login as particular user. </div>
+			
+			<select name="user" id="userID">
+			<option value="U1" selected="selected">Peter Parker</option>
+			<option value="P1">John Smith</option>
+			<option value="P2">Bell Smith</option>
+			<option value="P3">Gill Smith</option>
+			<option value="P4">Greg Smith</option>
+			<option value="P5">Kerry Packer</option>
+			<option value="P6">Johny Lever</option>
+			<option value="P7">George Gregory</option>
+			<option value="P8">Jane Jenny</option>
+			<option value="P9">Kate Cunningham</option>
+			<option value="P10">Larry Peter</option>
+			
+			
+			</select>
+		</div>
+		<div class="input">
+			<input type="button" value="Go" id="btnGo" />
+		</div>
+	</div>
+	</form>
+	</div>
+	</div>
+	
+    <!-- which JS do i need to include -->
+    
+	<script src="../../Styles/jquery-ui-1.8.23.custom.css" type="text/javascript"></script>
+    <script src="../../Scripts/pagebus/full/pagebus.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.2.js" type="text/javascript"></script>
+	 <script src="../../Scripts/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <script src="Scripts/Framework.js" type="text/javascript"></script>
+	
+	<!-- your app scripts go here -->
+    <script src="Scripts/shareIT.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	   $(function() {
+		 //$("form, a").fixAppURL();
+		$('#btnGo').click(function(){
+			sessionStorage.setItem('userID', $('#userID').val());
+			sessionStorage.setItem('userName', $('#userID>option:selected').text());
+			$("form").attr('action','Default.html').fixAppURL();
+			$("form").submit();
+		});
+		
+	   });
+		
+	
+   </script>
+
+</body>
+</html>
