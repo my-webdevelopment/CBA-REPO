@@ -9,136 +9,47 @@
  </head>
  <body>
  <div class="background"></div>
-<div class="app">
+<div class="app trackScreen">
 		
-        <form class="form" method="post" action="Default.htm" >
+        <form class="form" method="post" action="default.htm" >
 		<div class="main">
 			<div class="section">
 				<div class="header">
-				<h1><div class="title" style="float:left;width:50%;">Track Payments</div><div class="pendingPayments" style="float:right;width:50px;"><a href="#">P4</a></div><div class="newMessages" style="float:right;width:50px;"><a href="#">N2</a></div></h1>
+				<h1><div class="title" >Track Payments</div><div class="pendingPayments" ><a href="#">P4</a></div><div class="newMessages" ><a href="#">N2</a></div></h1>
 				</div>
                 
-					<div class="contentMessage" style="display:none;">
-						<fieldset>
-                           <div class="input">
-								<div class="description"></div>
-							</div>
-							
-						</fieldset>
-						
+					<div class="content contentMessage" style="display:none;">
 						
 					</div>
 				
-			
+			</div>
+			<div class="section">
 				
-                	 <div class="collapsible">			   
+                			   
 				  <div class="header" id="header1">
-					<h5><div class="headerCurrency" ><span class="headerCurrencyGreen" style="float:left;width:50%;"></span><span class="headerCurrencyRed"style="float:right;width:50%;text-align:right"></span></div></h5>
+					<div class="headerCurrency" ><span class="headerCurrencyGreen" style="float:left;width:50%;"></span><span class="headerCurrencyRed"style="float:right;width:50%;text-align:right"></span></div>
 										
 				  </div> 
-				</div>
+				
            
 		   
 		   <div class="content contentTransactions" >        <!-- .app .main .collapsible .content-->
-						  <div class="two-column">		   
-		                        <div class="first">
-								<div class="csecondary1">
-							            31 Jun 2012        
-							        </div>
-							         <div class="cprimary">
-							           Team Lunch
-								    </div>
-									
-                        
-                                    <div class="csecondary1">
-							            <span>Shared with:<span> 
-										<div class="">
-										<span class="sharedFriend">You,</span>
-											<span class="sharedFriend">George,</span>
-											<span class="sharedFriend"> Joe,</span>
-											<span class="sharedFriend"> Martin</span>
-										</div>
-							        </div>								
-							
-		                       </div>
-							   
-					           <div class="second">
-					               <div class="currency1">
-					                  $50.00  <span class="eachTotal">$10.00/each, paid by You</span>
-		                           </div>
-					           </div>
-					   </div>
-					   
-					   <div class="two-column">		   
-		                        <div class="first">
-								<div class="csecondary1">
-							            31 Jun 2012        
-							        </div>
-							         <div class="cprimary">
-							           Team Lunch
-								    </div>
-									
-                        
-                                    <div class="csecondary1">
-							            <span>Shared with:<span> 
-										<div class="">
-										<span class="sharedFriend">You,</span>
-											<span class="sharedFriend">George,</span>
-											<span class="sharedFriend"> Joe,</span>
-											<span class="sharedFriend"> Martin</span>
-										</div>
-							        </div>								
-							
-		                       </div>
-							   
-					           <div class="second">
-					               <div class="currency1">
-					                   $50.00  <span class="eachTotal">$10.00/each, paid by You</span>
-		                           </div>
-					           </div>
-					   </div>
-					   
-					   <div class="two-column">		   
-		                        <div class="first">
-								<div class="csecondary1">
-							            31 Jun 2012        
-							        </div>
-							         <div class="cprimary">
-							           Team Lunch
-								    </div>
-									
-                        
-                                    <div class="csecondary1">
-							            <span>Shared with:<span> 
-										<div class="">
-										<span class="sharedFriend">You,</span>
-											<span class="sharedFriend">George,</span>
-											<span class="sharedFriend"> Joe,</span>
-											<span class="sharedFriend"> Martin</span>
-										</div>
-							        </div>								
-							
-		                       </div>
-							   
-					           <div class="second">
-					               <div class="currency1">
-					                   $50.00  <span class="eachTotal">$10.00/each, paid by You</span>
-		                           </div>
-					           </div>
-					   </div>
+						  
 					   			
 		       </div>		  
 				
 			</div>
 			
 			<div class="actions">
-		<div class="secondary">
+			<div class="secondary">
+			<input type="button" value="Home" id="btnBack" />
+		</div>
+		
+		<div class="primary">
 			<input type="button" value="Create" id="btnCreateForm" />
 			
 		</div>
-		<div class="primary">
-			<input type="button" value="Home" id="btnBack" />
-		</div>
+		
 	</div>
 		</div>
 		</form>
@@ -149,7 +60,7 @@
 	<script id="pendingPaymentsTmpl" type="text/html">
 						<fieldset>
                            <div class="input" rel="{{>tID}}">
-								<div class=""> You have a pending payment of ${{>amount}} to {{>userName}} for "{{>description}}" on {{>time}} 
+								<div class="notification"> <div >You have a pending payment of ${{>amount}} to {{>userName}} for "{{>description}}" on {{>time}} </div>
 								<div class="pay"><a href="#" >Pay Now</a></div> <div class="later"><a href="#" >i'll Pay Later</a></div></div>
 							</div>
 							
@@ -159,7 +70,7 @@
 	<script id="newPaymentsTmpl" type="text/html">
 						<fieldset>
                            <div class="input" rel="{{>tID}}">
-								<div class=""> You got a new payment request of ${{>amount}} from {{>userName}} for "{{>description}}" on {{>time}} 
+								<div class="notification"> {{>userName}} has requested you a payment of ${{>amount}} for "{{>description}}" on {{>time}} 
 								<div class="pay"><a href="#" >Pay Now</a></div> <div class="later"><a href="#" >i'll Pay Later</a></div></div>
 							</div>
 							
@@ -169,28 +80,28 @@
 	<script id="transactionTmpl" type="text/html">
 					 <div class="two-column">		   
 		                        <div class="first">
-								<div class="csecondary1">
+								<div class="time">
 							           {{>time}}       
 							        </div>
 							         <div class="cprimary">
-							            {{>description}}  
+							            "{{>description}}" 
 								    </div>
 									
                         
                                     <div class="csecondary1">
 							            <span>Shared with:<span> 
-										<div class="">
+										<span class="">
 										{{for shared}}
 												<span class="sharedFriend">{{>userName}}</span>,&nbsp;&nbsp;
 										{{/for}}
-										</div>
+										</span>
 							        </div>								
 							
 		                       </div>
 							   
 					           <div class="second">
-					               <div class="currency1">
-					                    ${{>amount}}    <span class="eachTotal">&nbsp;${{>eachAmount}}/each, paid by {{>paidBy}}</span>
+					               <div class="currencyBlk"> 
+										 <span class="eachTotal">${{>eachAmount}}/each, paid by {{>paidBy}}</span>
 		                           </div>
 					           </div>
 					   </div>
@@ -213,9 +124,7 @@
 	<script type="text/javascript">
 	   $(function() {
 		 //$("form, a").fixAppURL();
-		   $("#header1").bind("click",function() {	     
-			  $(this).closest("div.section").children("div.content").toggle("slow");
-		  });
+		 
 		  var uID = sessionStorage.getItem('userID');
 		  var uName = sessionStorage.getItem('userName');
 		  
@@ -297,23 +206,33 @@
 		  }
 		  
 		  
-			$('.headerCurrencyGreen').html("Should Receive:&nbsp;+$"+parseFloat(recAmt));
-			$('.headerCurrencyRed').html("Pending Payments:&nbsp;-$"+parseFloat(payAmt));
+			$('.headerCurrencyGreen').html("Credits:&nbsp;+$"+parseFloat(recAmt).toFixed(2));
+			$('.headerCurrencyRed').html("Debits:&nbsp;-$"+parseFloat(payAmt).toFixed(2));
 		  
-		  $('.pendingPayments a').html('P-'+pendingPay.length);
-		  $('.newMessages a').html('M-'+newMessages.length);
+		  $('.pendingPayments a').html(pendingPay.length);
+		  //$('.newMessages a').html(newMessages.length);
 		  
 		  
-		  $('.pendingPayments a').click(function(){
-			$('.contentMessage').hide().html($('#pendingPaymentsTmpl').render(payObj)).toggle('slow');
-		  
+		  $('.pendingPayments').click(function(){
+		  if(payObj.length>0){
+			$('.contentMessage').html($('#pendingPaymentsTmpl').render(payObj)).toggle('slow');
+		  }
 		  });
 		  
-		  $('.newMessages a').click(function(){
-			$('.contentMessage').hide().html($('#newPaymentsTmpl').render(receiveObj)).toggle('slow');
+		 /* $('.newMessages a').click(function(){
+			$('.contentMessage').html($('#newPaymentsTmpl').render(receiveObj)).toggle('slow');
 		  
+		  });*/
+		  $("#header1").bind("click",function() {
+			if(transObj.length>0){		  
+			  $(this).closest("div.section").children("div.content").toggle("slow");
+			}
 		  });
+		  if(transObj.length>0){
 		  $('.contentTransactions').hide().html($('#transactionTmpl').render(transObj)).toggle('slow');
+		  }else{
+		  $('.contentTransactions').hide();
+		  }
 		 
 		  $('.pay a').live('click',function(){
 			alert('lead to payment page')
@@ -327,7 +246,7 @@
 			$("form").submit();
 		  });
 		  $('#btnBack').click(function(){
-			$("form").attr('action','Default.html').fixAppURL()
+			$("form").attr('action','default.html').fixAppURL()
 			$("form").submit();
 		  });
 		  

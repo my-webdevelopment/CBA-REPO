@@ -33,84 +33,77 @@ ul, ol {
 /*	Typography presets
 	------------------	*/
 
-body {
 	
-	font-size: 100%;
-	line-height: 1.7;
-	color: #555;
-	
+/*Screen - Track */	
+
+.trackScreen  .pendingPayments{
+float:right;
+font-size:.8em;
+padding-left:36px;
+height: 36px;
+width: 30px;
+background-image: url('../Images/notification.png');
+background-repeat: no-repeat;
+}
+.trackScreen  .newMessages{
+display:none;
+
+}
+.trackScreen  .pendingPayments a{
+vertical-align: bottom;
+line-height: 1.5em;
+color:#4BA97A;
+}
+.trackScreen  .title{
+width:60%;
+float:left;
+font-size:1em;
+}
+.trackScreen .headerCurrencyGreen{
+color:#4BA97A;
+font-size:1em;
+float:left;
+width:48%;
+}
+.trackScreen .headerCurrencyRed{
+color:#E24334;
+font-size:1em;
+float:right;
+width:48%;
 }
 
-h1  {
-	font-size: 1.2em;
-	font-weight: normal;
-	margin: 0 0 1em 0;
-	line-height: 1.4;
-}
-
-h1.get-in-touch {
+.trackScreen  .contentMessage .notification{
+font-size:.8em;
+color:#666;
 
 }
+.trackScreen .contentMessage .notification .pay{
+font-size:1em;
+width:50%;
+float:left;
+margin-top:.5em;
 
-h2 {
-	font-weight: normal;
-	font-size: 1.2em;
-	margin: 0 0 1em 0;
+}
+.trackScreen .contentMessage .notification .later{
+font-size:1em;
+width:50%;
+float:left;
+text-align:right;
+margin-top:.5em;
+}
+.trackScreen .form fieldset{margin-bottom:0px;}
+.trackScreen .form .actions{margin:.21em 0}
+.trackScreen .actions .primary, .actions .secondary{
+margin-top: .4em;
 }
 
-h3 {
-	line-height: 1.4;
-	margin-bottom: 10px;
-}
-
-h4 {
-	font-size: 0.8em;
-	font-weight: normal;
-	text-transform: uppercase;
-	letter-spacing: 0.6em;
-	margin-bottom: 0.6em;
-}
-
-h5 {
-	margin-bottom: 2%;
-	font-size: 0.9em;
-	line-height: 1.8;
-}
-
-p {
-	margin-bottom: 1em;
-	font-size: 0.9em;
-	line-height: 1.8;
-}
-
-
-a {
-	color: #e12e87;
-	/*text-shadow: #fff 0 1px 0;*/
-	text-decoration: none;
-	outline: 0;
-	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-o-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
-	
-}
-
-
-blockquote {
-	font-size: 1.4em;
-}
-
-
-blockquote p {
-	line-height: 1.5;
-}
-
-a:hover {
-	opacity: 0.7;
-}
-
-
+.trackScreen .contentTransactions .time{font-size: .7em;}
+.trackScreen .contentTransactions .cprimary{font-size: 1em;margin:.5em 0}
+.trackScreen .contentTransactions .csecondary1{font-size: .7em;}
+.trackScreen .contentTransactions .csecondary1 .sharedFriend{font-size: .9em;}
+.trackScreen .contentTransactions .second .currencyBlk{margin:.5em 0}
+.trackScreen .contentTransactions .second .currency1{font-size: 1em;}
+.trackScreen .contentTransactions .second .eachTotal{font-size: .8em;}
 /*	Structure
 	------------------	*/
 
@@ -129,6 +122,11 @@ h6 {
 }
 
 
+/* track screen*/
+
+
+
+/* track screen */
 
 
 
@@ -156,6 +154,17 @@ p {
 section {
 	
 }
+
+.app{
+width:100%;
+}
+
+/* track screen*/
+
+
+
+
+/* track screen */
 
 }
 
@@ -187,8 +196,8 @@ section {
 	
 }
 .app{
-min-width:800px;
-width:800px;
+max-width:900px;
+width:100%;
 margin:0 auto;
 }
 
@@ -217,19 +226,13 @@ p {
 	font-size: 0.9em;
 }
 
-#container,#map,#details,#search {
-	width: 600px;
-	/*background-color: forestgreen;*/
+.app {
+	width: 900px;
+	
 }
 
 section {
 	
-}
-
-.app{
-min-width:800px;
-width:800px;
-margin:0 auto;
 }
 
 }
@@ -266,6 +269,9 @@ section {
 	
 }
 
+.app {
+	width: 1000px;
+}
 
 }
 
@@ -278,9 +284,9 @@ section {
  *  120px  264px  408px  552px  696px  840px  984px  1128px  1272px  1416px  1560px  1704px */
 
 @media only screen and (min-width: 1824px) {
-	#container,#map,#details,#search {
-	width: 600px;
-	/*background-color: forestgreen;*/
+	
+	.app {
+	width: 1000px;
 	}
 }
  

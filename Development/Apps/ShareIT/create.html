@@ -13,20 +13,20 @@
 		
 		<div class="main">
 			<div class="section">
-				<form class="form" method="get" action="Default.htm" >
+				<form class="form" method="get" action="default.htm" >
                   
 					<div class="header">
-						<h5>Create Dutch</h5>
+						<h5>Create</h5>
 					</div>
 					<div class="content">
 
 						<fieldset>
                             
 							<div class="input validatable">
-								<label for="dutchName">Describe </label> 
+								<label for="dutchName">Describe</label> 
 								<input type="text" name="dutchName" id="dutchName" placeholder="Under 50 characters" maxlength="50" />
 								<div class="errormessage"></div>
-								<div class="description">name your transaction</div>
+								<div class="description">give name to your transaction</div>
 							</div>
 							
                             <div class="two-column">
@@ -98,6 +98,8 @@
 	<script type="text/javascript">
 	   $(function() {
 			//mockjax will intercept calls to /service/data
+	var uID = sessionStorage.getItem('userID');
+	var uName = sessionStorage.getItem('userName');
 	$.mockjax({
 		url: 'Default.aspx/GetAddressBook',
 		responseTime: 500,
@@ -107,10 +109,16 @@
 			var payee = AllData.result.addressBook.payees.payee;
 
 			this.responseText = {success: true,data: []};
-			this.responseText.data.push({name:"Myself",payeeID:"0",checked:"checked='checked'"});
-			
+			if(uID == "U1"){
+				this.responseText.data.push({name:"You",payeeID:"U1",checked:"checked='checked'"});
+			}else{
+				this.responseText.data.push({name:"You",payeeID:uID,checked:"checked='checked'"});
+				this.responseText.data.push({name:"Peter Parker",payeeID:'U1',checked:""});
+			}
+				
 			for (var idx = 0; idx < payee.length; idx++) {
 				var payeeItem = payee[idx];
+				if(uID != payeeItem.id)
 				this.responseText.data.push({name:payeeItem.name,payeeID:payeeItem.id,checked:""});
 			}
 		}

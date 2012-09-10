@@ -58,15 +58,7 @@ $(function () {
 		localStorage.setItem(LOCAL_STORAGE_NAMEPREFIX + 'Data', JSON.stringify(data));
 	}
 	
-	function getTransactions(){
-		console.log(localStorage)
-	}
 	
-	function setTransactions(){
-		localStorage.setItem(LOCAL_STORAGE_NAMEPREFIX + 'Data',JSON.stringify(localStorage));
-	
-	}
-	console.log(AppStore)
 	 //$("form, a").fixAppURL();
 		$('#btnCreate').click(function(){
 			if(validateCreate()){
