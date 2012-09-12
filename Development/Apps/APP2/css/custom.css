@@ -1,0 +1,346 @@
+@CHARSET "ISO-8859-1";
+/*
+
+
+*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, 
+p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, 
+img, ins, q, small, strong, sub, sup, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	
+}
+
+article, aside, figure, figure img, figcaption, hgroup,
+footer, header, nav, section {
+	display: block;
+}
+
+a img {border: 0;}
+
+figure {position: relative;}
+figure img {width: 100%;}
+
+ul, ol {
+	list-style: none;
+}
+
+.app .header {background-color: #222;}/*#1F4F69*/
+.app .header h1 {color:#fff; line-height:24px;text-align:center;}
+
+
+
+/*	Typography presets
+	------------------	*/
+
+	
+/*Screen - Track */	
+.form fieldset{padding-bottom: 1em;border-bottom: 1px dashed #999;}
+.title{font-size:1em;}
+.paymentAlertsBlk .contentMessage .time{font-size:.8em;color:#666;}
+.paymentAlertsBlk .contentMessage .notification{font-size:.8em;color:#666;}
+.paymentAlertsBlk .contentMessage .notification .pay{font-size:1em;width:50%;float:left;margin-top:.5em;}
+.paymentAlertsBlk  .contentMessage .notification .later{font-size:1em;width:50%;float:left;text-align:right;margin-top:.5em;}
+.actions .primary, .actions .secondary{margin-top: .4em;}
+.contentTransactions {margin-bottom: .5em}
+.contentTransactions .time{font-size: .7em;}
+.contentTransactions .cprimary{font-size: 1em;margin:.5em 0;}
+.contentTransactions .cprimary .amount{float:right;}
+.contentTransactions .csecondary1{font-size: .8em;}
+.contentTransactions .csecondary1 .sharedFriend{font-size: 1em;}
+.contentTransactions .second .currencyBlk{text-align: left;margin:.5em 0;}
+.contentTransactions .second .currency1{font-size: 1em;}
+.contentTransactions .second .eachTotal{font-size: .8em;}
+.contentTransactions .second  .viewDetails{float:right;font-size: .9em;}
+.transDetails  ul{color:#666;clear:both;}
+.transDetails  ul li.userName{font-size: 1em;margin:.5em 0;width:60%;float:left;line-height:1em}
+.transDetails  ul li.currencyDetails{text-align:right;width:40%;float:right;line-height:1em;margin:.5em 0;}
+.transDetails  ul li.description span.reminder{font-size: 1em;clear:both;text-align: right;float: right;}
+.transDetails  ul li.description{font-size: .9em;}
+.errorAlert{color: red;font-size: .9em;}
+.progress {margin-bottom: 5px;}
+/*	Structure
+	------------------	*/
+
+/*  2-column, 320 px layout for smartphones (iPhone portrait)
+ *  ---------------------------------------
+ *  1      2
+ *  120px  264px   (24px gutters) */
+ 
+ 
+h1 {
+	font-size: 1.2em;
+}
+
+h6 {
+	font-size: 0.8em;
+}
+.btnLabel{display:none;padding-left: 2px;line-height: 10px;}
+#userWelcome{display:inline-block;}
+/* track screen*/
+
+
+
+/* track screen */
+
+
+
+/*  3-column, 480 px layout for smartphones (iPhone landscape)
+ *  ---------------------------------------
+ *  1      2      3
+ *  120px  264px  408px   (24px gutters) */
+@media only screen and (min-width: 464px) and (max-width: 767px) {
+	
+	
+h1 {
+	font-size: 1.4em;
+}		
+	
+h2 {
+	font-size: 1.4em;
+}
+
+p {
+	font-size: 1em;
+}
+.form button {
+cursor: pointer;
+padding: 3px 4px;
+}
+
+
+
+section {
+	
+}
+
+.app{
+width:100%;
+}
+
+/* track screen*/
+
+.form button {
+cursor: pointer;
+padding: 3px 4px;
+}
+.btn-label{display:inline-block;}
+#userWelcome{display:none;}
+
+/* track screen */
+
+}
+
+
+
+/*  Default 5-column, 768 px layout for iPads (portrait), netbooks, and IE
+ *  (All other layouts inherit styles from this layout)
+ *  -----------------------------------------------------------
+ *  1      2      3      4      5
+ *  120px  264px  408px  552px  696px   (24px gutters) */
+ 
+@media only screen and (min-width: 768px) and (max-width: 935px) {
+	
+h1 {
+	font-size: 1.4em;
+}	
+
+h2 {
+	font-size: 1.4em;
+}	
+
+p {
+	font-size: 1em;
+}
+
+
+
+section {
+	
+}
+.app{
+max-width:900px;
+width:100%;
+margin:0 auto;
+}
+.app .header{ padding-right:1.5em;}
+.trackScreen .contentTransactions .second .currencyBlk{text-align: right;}
+
+.btnLabel{display:inline-block;}
+#userWelcome{display:none;}
+}
+
+
+
+
+/*  6-column, 936 px layout for desktops and laptops (also: iPad landscape)
+ *  ------------------------------------------------------------------------
+ *  1      2      3      4      5      6
+ *  120px  264px  408px  552px  696px  840px   (24px gutters) */
+
+@media only screen and (min-width: 936px) {
+	
+h1 {
+	font-size: 1.2em;
+}
+
+h2 {
+	font-size: 1.2em;
+}	
+	
+p {
+	font-size: 0.9em;
+}
+
+.app {
+	width: 900px;
+	
+}
+.app .header{ padding-right:1.5em;}
+.trackScreen .contentTransactions .second .currencyBlk{text-align: right;}
+.btnLabel{display:inline-block;}
+#userWelcome{display:none;}
+section {
+	
+}
+
+}
+
+
+
+
+/*  8-column, 1224 px layout for desktops and laptops
+ *  ------------------------------------------------------------------------
+ *  1      2      3      4      5      6      7      8
+ *  120px  264px  408px  552px  696px  840px  984px  1128px   (24px gutters) */
+@media only screen and (min-width: 1224px) {
+	
+
+h1 {
+	font-size: 1.8em;
+}
+
+h2 {
+	font-size: 1.8em;
+	margin-bottom: 0.6em;
+}
+
+blockquote {
+	margin: 1em 0;
+}
+
+p {
+	font-size: 1em;
+}
+
+
+section {
+	
+}
+
+.app {
+	width: 1000px;
+}
+.trackScreen .contentTransactions .second .currencyBlk{text-align: right;}
+.btnLabel{display:inline-block;}
+#userWelcome{display:none;}
+
+}
+
+
+
+
+/*  12-column, 1824 px layout for gigantic screens   (24px gutters)
+ *  ---------------------------------------------------------------------------------------
+ *  1      2      3      4      5      6      7      8       9       10      11      12
+ *  120px  264px  408px  552px  696px  840px  984px  1128px  1272px  1416px  1560px  1704px */
+
+@media only screen and (min-width: 1824px) {
+	
+	.app {
+	width: 1000px;
+	}
+	.trackScreen .contentTransactions .second .currencyBlk{text-align: right;}
+	.btnLabel{display:inline-block;}
+	#userWelcome{display:none;}
+}
+ 
+ 
+/*	Overrides for iPhone 4 
+	and other high device-pixel-ratio devices
+	-----------------------------------------	*/
+
+@media 
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) {
+	
+}
+
+
+
+/*	Misc
+	------------------	*/
+ 
+
+	
+img,
+object,
+embed,
+iframe {	
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+object {
+	margin-bottom: 2em;
+}
+p.error {
+    color: red;
+    font-size: .7em;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    width: 100%;
+    float: none;
+}
+
+img {
+  max-width: 100%;
+}
+#map_canvas img { max-width:none; }
+
+/*---------------------------*/			
+		 
+		 
+/*scroll bar for safari & chrome*/
+
+::-webkit-scrollbar {
+width: 7px;
+height: 15px;
+}
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+height: 1px;
+display: block;
+background-color: #696b6c;
+}
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment {
+height: 1px;
+display: block;
+background-color: #EFF7FF;
+}
+::-webkit-scrollbar-track-piece {
+background-color: #EFF7FF;
+}
+::-webkit-scrollbar-thumb:vertical,
+::-webkit-scrollbar-thumb:horizontal
+{
+background-color: white;
+border: 1px solid #639ACE;
+-webkit-border-radius: 6px;
+}

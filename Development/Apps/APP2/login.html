@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+ <head>     
+   <title> Share !T </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
+	<link rel="stylesheet" href="css/datepicker.css"/>
+    <script src="Data/AllData.js" type="text/javascript"></script>
+
+
+ </head>
+ <body>
+ <div class="background"></div>
+
+	<form class="form" method="post" action="default.htm" >
+    <div class="app">
+		
+	<div class="header">
+	<div class="">
+	  <div class="">
+		<div class="" style="float:left;width:30%;text-align:left; ">
+			<div class="btn-group">
+			  <button class="btn btn-mini btn-user" type="button"> <a href="javascript:void(0)"><i class="icon-user"></i></a><span class="btnLabel"><span></button>
+			  <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">
+				<span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu listUser">
+				  <li><a href="javascript:void(0)" id="U1">Peter Parker</a></li>
+				  <li><a href="javascript:void(0)" id="P1">John Smith</a></li>
+				  <li><a href="javascript:void(0)" id="P2">Bell Smith</a></li>
+				  <li><a href="javascript:void(0)" id="P3">Gill Smith</a></li>
+				  <li><a href="javascript:void(0)" id="P4">Greg Smith</a></li>
+				  <li><a href="javascript:void(0)" id="P5">Kerry Packer</a></li>
+				  <li><a href="javascript:void(0)" id="P6">Johny Lever</a></li>
+				  <li><a href="javascript:void(0)" id="P7">George Gregory</a></li>
+				  <li><a href="javascript:void(0)" id="P8">Jane Jenny</a></li>
+				  <li><a href="javascript:void(0)" id="P9">Kate Cunningham</a></li>
+				  <li><a href="javascript:void(0)" id="P10">Larry Peter</a></li>
+				  
+				</ul>
+			</div>
+		</div>
+		<div class="" style="float:left;width:40%; text-align:center;">
+		 <h1> Share !T</h1> 
+		</div>
+		<div class="btn-notification" style="float:left;width:30%; text-align:right;">
+		 <div class="btn-group">
+			  <button class="btn btn-mini btn-danger"  type="button"> <i class="icon-tasks"></i> </button>
+			  
+		</div>
+		</div>
+		
+	  </div>
+	</div>
+	
+	
+    </div>
+    
+	 <div class="main">
+		<div class="topNavigation" style="text-align:right;margin-top:.4em;"> 
+			<span id="userWelcome" style="float:left"> </span> 
+			<button class="btn btn-mini btn-create" title="create" type="button"><i class="icon-plus"></i> <span class="btnLabel">Create</span></button> 
+			<button class="btn btn-mini btn-track" title="track" type="button"> <i class="icon-calendar"></i> <span class="btnLabel">Track</span></button>
+		</div>
+		
+		<div class="section paymentAlertsBlk" >
+			<div class="header">
+				<h1><div class="title" >Payments Alerts</div></h1>
+			</div>
+			<div class="content contentMessage" style="display:none;">
+			</div>
+		</div>
+		<div class="section trackPaymentsBlk">
+				  
+		</div>
+		
+		<div class="section createPaymentBlk">
+				<div class="header">
+						<h5>Create</h5>
+					</div>
+					<div class="content">
+
+						<fieldset>
+                            
+							<div class="input validatable">
+								<label for="dutchName">Describe</label> 
+								<input type="text" name="dutchName" id="dutchName" placeholder="Under 50 characters" maxlength="50" />
+								<div class="errormessage"></div>
+								<div class="description">give name to your transaction</div>
+							</div>
+							
+                            <div class="two-column">
+                                <div class="input validatable">
+                                    <label for="amount">Amount</label> 
+								    <input type="text" name="amount" id="dutchAmount" maxlength="7"/>
+									<div class="errormessage"></div>
+									<div class="description">total amount you paid</div>
+                                </div>
+                                 <div class="input disabled">
+								 </div>
+                            </div>
+							 <div class="two-column friendsBlk">
+								 <div class="radiogroup">
+									<div class="input">
+										<label>Select Friends</label> 
+										<div class="checkgroup">
+											<div class="eachUserRow"><span class="eachUser"><input type="checkbox" name="likeable" checked="checked"/><label>Myself</label></span ></div>
+											
+										</div>
+									</div>
+									<div class="input eachAmount">
+									<h1></h1>
+									</div>
+								</div>	 
+                            </div>
+							
+                            
+                        </fieldset>
+
+                        
+
+						<div class="two-column">
+							
+							<span class="">
+							<button class="btn btn-mini" title="create" type="button" id="btnCreate"><i class="icon-plus"></i> <span class="">Create</span></button> 
+							
+							
+							
+							<button class="btn btn-mini" title="create" type="button" id="btnBack" style="float:right;"><i class="icon-circle-arrow-left"></i> <span class="">Back</span></button> 
+						
+							
+							</span>
+						</div>
+					</div>
+			</div>
+		
+		
+		
+    </div>
+	
+	</div>
+	</form>
+	<script id="pendingPaymentsTmpl" type="text/html">
+						<fieldset>
+                        <div class="input inputAlert" rel="{{>tID}}">
+								<div class="time">{{>time}}</div>
+								<div class="notification">
+									<div>You have a pending payment of ${{>amount}} to {{>userName}} for "{{>description}}"</div>
+								<div class="pay"><a href="javascript:void(0)" rel="{{>uID}}" >Pay Now</a></div> 
+								<div class="later"><a href="javascript:void(0)"  >i'll Pay Later</a></div>
+								
+								</div>
+								<div class="payLater" style="display:none;">
+								
+								<div class="payLaterdescription notification"> <div>Please enter a date when you wanted to pay.</div>
+								<div class="errorAlert error" >	</div>
+				<span class="dateFld"><input type="text" name="date-{{>tID}}" class="datepicker date-{{>tID}}" data-date-format="mm/dd/yyyy" value="{{>today}}" rel="{{>uID}}" id="date-{{>tID}}" data-date="{{>today}}"  value="{{>today}}" style="width: 30%;" /> <button class="btn btn-mini btn-info btn_later" type="button">Confirm</button></span >
+				
+				
+				</div>
+								</div>
+						</div>
+						</fieldset>	
+						
+	</script>
+	
+	<!--<script id="newPaymentsTmpl" type="text/html">
+					
+                           <div class="input" rel="{{>tID}}">
+								<div class="time">{{>time}}</div>
+								<div class="notification"> {{>userName}} has requested you a payment of ${{>amount}} for "{{>description}}" on {{>time}} 
+								<div class="pay"><a href="#" >Pay Now</a></div> <div class="later"><a href="#" >i'll Pay Later</a></div></div>
+							</div>
+				
+	</script>-->
+	
+	<script id="detailedPaymentsTmpl" type="text/x-jsrender">
+		{{if isPaid == "1"}}
+			<ul style="opacity:.5" >
+		{{else}}
+			<ul >
+		{{/if}}
+				<li class="userName">{{>userName}} </li>
+				<li class="currencyDetails"> ${{>eachAmount}} </li>
+				{{if isSeen == "0" && isPaid == "0"}}
+					<li class="description">your friend not seen your request. <span class="reminder"><a href="javascript:void(0)">Poke Again</a></span></li>				
+				{{else isPaid== "0" }}
+					<li class="description">payment pending.. <span class="remainder"><span class="reminder"><a href="javascript:void(0)">Poke Again</a></span></li>	
+				{{else}}
+					<li class="description">paid</li>	
+				{{/if}} 
+			
+				
+				
+			</ul>
+                          
+	</script>
+	
+	<script id="transactionTmpl" type="text/html">
+	<div class="header" >
+				<div class="headerCurrency" >
+					<span class="title" style="float:left;width:70%;">{{>description}}</span>
+					<span class="currency"style="float:right;width:30%;text-align:right">${{>amount}}</span>
+				</div>
+			</div>
+			<div class="content contentTransactions" >        
+				
+					 <div class="two-column">		   
+		                        <div class="first">
+									<div class="time">
+										{{>time}}        
+									</div>
+								</div>
+								<div class="second">
+									<div class="paymentBar">
+										<div class="progress">
+										  <div class="bar bar-success" style="width: {{>paidPercent}}%;">${{>paidAmount}}</div>
+												<!-- <div class="bar bar-warning" style="width: 20%;"></div> -->
+										  <div class="bar bar-danger" style="width: {{>pendingPercent}}%;">${{>pendingAmount}}</div>
+										</div>
+									</div>
+								</div>
+								<div class="first">
+									
+							    <div class="csecondary1">
+										<span>Shared with:</span> 
+										<span class="">
+										{{for shared}}
+												<span class="sharedFriend">{{>userName}}</span>,&nbsp;&nbsp;
+										{{/for}}
+										</span>
+									</div>
+								</div>
+																
+							   
+					           <div class="second">
+					               <div class="currencyBlk"> 
+										
+										 <span class="viewDetails"><a href="javascript:void(0);" rel="{{>tID}}">View Payments</a></span>
+		                           </div>
+					           </div>
+							   <div class="transDetails" style="width:100%"></div>
+					   </div>
+			</div>
+	</script>
+	<script id="noTransactionTmpl" type="text/html">
+		<div class="header" >
+					<div class="headerCurrency" >
+						<span class="title" style="float:left;width:100%;">No Transactions Found.</span>
+						
+					</div>
+		</div>	
+	</script>	
+	 <script id="addressBookTmpl" type="text/html">
+				<div class="eachUserRow"><span class="eachUser"><input type="checkbox" name="likeable-{{>payeeID}}" {{>checked}} value="{{>payeeID}}" rel="{{>name}}" /><label for="likeable-{{>payeeID}}">{{>name}}</label></span ></div>
+		  </script>
+	
+	
+    <!-- which JS do i need to include -->
+    
+	
+    <script src="../../Scripts/pagebus/full/pagebus.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.2.js" type="text/javascript"></script>
+	<script src="../../Scripts/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+	<script src="../../Scripts/jsrender.js" type="text/javascript"></script>
+     <script src="../../Scripts/jquery.mockjax.js" type="text/javascript"></script>
+    <script src="js/Framework.js" type="text/javascript"></script>
+	
+	<!-- your app scripts go here -->
+    <script src="js/shareIT.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
+	<script src="js/jquery.dateFormat-1.0.js" type="text/javascript"></script>
+	
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>     
+   <title> go Dutch </title>
+   <script src="Data/AllData.js" type="text/javascript"></script>
+
+		
+			<link rel="stylesheet" href="css/bootstrap-responsive.min.css"/>
+ </head>
+ <body>
+ <div class="background"></div>
+<div class="app">
+		
+		<div class="main">
+			<div class="section">
+				<form class="form" method="get" action="default.htm" >
+                  
+					<div class="header">
+						<h5>Create</h5>
+					</div>
+					<div class="content">
+
+						<fieldset>
+                            
+							<div class="input validatable">
+								<label for="dutchName">Describe</label> 
+								<input type="text" name="dutchName" id="dutchName" placeholder="Under 50 characters" maxlength="50" />
+								<div class="errormessage"></div>
+								<div class="description">give name to your transaction</div>
+							</div>
+							
+                            <div class="two-column">
+                                <div class="input validatable">
+                                    <label for="amount">Amount</label> 
+								    <input type="text" name="amount" id="dutchAmount" maxlength="7"/>
+									<div class="errormessage"></div>
+									<div class="description">total amount you paid</div>
+                                </div>
+                                 <div class="input disabled">
+								 </div>
+                            </div>
+							 <div class="two-column friendsBlk">
+								 <div class="radiogroup">
+									<div class="input">
+										<label>Select Friends</label> 
+										<div class="checkgroup">
+											<div class="eachUserRow"><span class="eachUser"><input type="checkbox" name="likeable" checked="checked"/><label>Myself</label></span ></div>
+											
+										</div>
+									</div>
+									<div class="input eachAmount">
+									<h1>$100.00/each</h1>
+									</div>
+								</div>	 
+                            </div>
+							
+                            
+                        </fieldset>
+
+                        
+
+						<div class="actions">
+							
+							<div class="primary">
+								<input type="button" value="Create" id="btnCreate"/>
+							</div>
+							<div class="secondary">
+								<input type="button" value="Back" id="btnBack"/>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		
+		  <script id="addressBookTmpl" type="text/html">
+				<div class="eachUserRow"><span class="eachUser"><input type="checkbox" name="likeable-{{>payeeID}}" {{>checked}} value="{{>payeeID}}" rel="{{>name}}" /><label for="likeable-{{>payeeID}}">{{>name}}</label></span ></div>
+		  </script>
+		
+    </div>
+	
+	
+    <!-- which JS do i need to include -->
+    
+	<script src="../../Styles/jquery-ui-1.8.23.custom.css" type="text/javascript"></script>
+    <script src="../../Scripts/pagebus/full/pagebus.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.2.js" type="text/javascript"></script>
+	 <script src="../../Scripts/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+	 <script src="../../Scripts/jsrender.js" type="text/javascript"></script>
+     <script src="../../Scripts/jquery.mockjax.js" type="text/javascript"></script>
+     <script src="Scripts/Framework.js" type="text/javascript"></script>
+	
+	<!-- your app scripts go here -->
+    <script src="Scripts/shareIT.js" type="text/javascript"></script>
+	
+	
+	<script type="text/javascript">
+	   $(function() {
+			//mockjax will intercept calls to /service/data
+	var uID = sessionStorage.getItem('userID');
+	var uName = sessionStorage.getItem('userName');
+	$.mockjax({
+		url: 'Default.aspx/GetAddressBook',
+		responseTime: 500,
+		dataType: "json",
+		response: function(settings) {
+			
+			var payee = AllData.result.addressBook.payees.payee;
+
+			this.responseText = {success: true,data: []};
+			if(uID == "U1"){
+				this.responseText.data.push({name:"You",payeeID:"U1",checked:"checked='checked'"});
+			}else{
+				this.responseText.data.push({name:"You",payeeID:uID,checked:"checked='checked'"});
+				this.responseText.data.push({name:"Peter Parker",payeeID:'U1',checked:""});
+			}
+				
+			for (var idx = 0; idx < payee.length; idx++) {
+				var payeeItem = payee[idx];
+				if(uID != payeeItem.id)
+				this.responseText.data.push({name:payeeItem.name,payeeID:payeeItem.id,checked:""});
+			}
+		}
+	});
+	
+	$.getJSON("Default.aspx/GetAddressBook", {}, function(resp) {
+		if (resp.success) {
+			$('.checkgroup').html($('#addressBookTmpl').render(resp.data));
+		}
+    });
+   });
+		
+	
+   </script>
+
+</body>
+</html>

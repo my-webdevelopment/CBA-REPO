@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ <head>     
+   <title> go Dutch </title>
+   <style>
+
+ </style>
+ </head>
+ <body>
+ <div class="background"></div>
+    <div class="app">	 		
+	<div class="header">
+	<h1>go Dutch</h1>
+    </div>
+    <div class="main">
+	<form class="form" method="get" action="Default.htm" >
+	<div class="content">
+	<div class="input userMessage">
+			<div class="description"></div>
+	</div>
+	</div>
+	<div class="actions">
+		<div class="secondary">
+			<input type="button" value="Create" id="btnCreateForm" />
+			
+		</div>
+		<div class="primary">
+			<input type="button" value="Track" id="btnTrack" />
+		</div>
+	</div>
+	</form>
+	</div>
+	</div>
+	
+    <!-- which JS do i need to include -->
+    
+	<script src="../../Styles/jquery-ui-1.8.23.custom.css" type="text/javascript"></script>
+    <script src="../../Scripts/pagebus/full/pagebus.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-1.7.2.js" type="text/javascript"></script>
+	 <script src="../../Scripts/jquery-ui-1.8.18.custom.min.js" type="text/javascript"></script>
+    <script src="Scripts/Framework.js" type="text/javascript"></script>
+	
+	<!-- your app scripts go here -->
+    <script src="Scripts/shareIT.js" type="text/javascript"></script>
+	
+	<script type="text/javascript">
+	   $(function() {
+		 //$("form, a").fixAppURL();
+		$('#btnCreateForm').click(function(){
+			$("form").attr('action','create.html').fixAppURL()
+			$("form").submit();
+		});
+		$('#btnTrack').click(function(){
+			$("form").attr('action','result.html').fixAppURL()
+			$("form").submit();
+		});
+		$('.userMessage .description').html('Welcome '+sessionStorage.getItem('userName')+', please choose your option..');
+	   });
+		
+	
+   </script>
+
+</body>
+</html>

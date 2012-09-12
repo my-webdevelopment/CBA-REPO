@@ -9,7 +9,7 @@
     <add host="Apps/ContextEditor/Manifest.xml"/>
 	
 	<add host="Apps/MapIT/Manifest.xml"/>
-	<add host="Apps/ShareIT/Manifest.xml"/>
+	<add host="Apps/APP2/Manifest.xml"/>
 	<add host="Apps/SMManager/Manifest.xml"/>
 	
   </apps>

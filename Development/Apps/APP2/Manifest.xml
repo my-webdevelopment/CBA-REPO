@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<manifest xmlns="http://commbank.com.au/appstore/manifest.v1.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <app>
+    <appId>CommBank.APP2</appId>
+    <appName>APP2</appName>
+    <version>1.0.0</version>
+    <publisherId>HCL</publisherId>
+    <publisherName>Commonwealth Bank of Australia</publisherName>
+    <description>Financial Sharing</description>
+    <versionNotes></versionNotes>
+    <appIcon></appIcon>
+    <screenshots>
+    </screenshots>
+    <themes>
+      <container>
+		<supports name="Sections" />
+        <supports name="Form" />
+      </container>
+		<custom fallback="basic">
+			<theme name="custom">
+			<link rel="stylesheet" href="css/custom.css"/>
+			</theme>
+			
+			
+		</custom>
+    </themes>
+    <exposes>
+      <ui interfaceId="ContainerLaunch" interfaceVersion="1" resolvesTo="~/login.html">
+        <parameters></parameters>
+        <permittedConsumers>
+          <app xsi:type="AnyApp"/>
+          <container xsi:type="AnyContainer"/>
+          <user xsi:type="UserAnonymous"/>
+        </permittedConsumers>
+      </ui>
+    </exposes>
+  </app>
+</manifest>
