@@ -3,9 +3,11 @@
  <head>     
    <title> Share !T </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
     <link rel="stylesheet" href="css/bootstrap.css"/>
 	<link rel="stylesheet" href="css/bootstrap-responsive.css"/>
 	<link rel="stylesheet" href="css/datepicker.css"/>
+	<link rel="stylesheet" href="css/jquery.alerts.css"/>
     <script src="Data/AllData.js" type="text/javascript"></script>
 
 
@@ -77,14 +79,14 @@
 		
 		<div class="section createPaymentBlk">
 				<div class="header">
-						<h5>Create</h5>
+						<h5>Create <span style="float:right;"><button class="btn btn-mini btn-transaction" title="Transactions" type="button"><i class="icon-list"></i> <span class="">Show Transactions</span></button> </span></h5>
 					</div>
 					<div class="content">
-
+						<div class="myTransactions"><ul class="listTransaction"></ul></div>
 						<fieldset>
-                            
 							<div class="input validatable">
 								<label for="dutchName">Describe</label> 
+								<input type="hidden" name="dutchID" id="dutchID" maxlength="" />
 								<input type="text" name="dutchName" id="dutchName" placeholder="Under 50 characters" maxlength="50" />
 								<div class="errormessage"></div>
 								<div class="description">give name to your transaction</div>
@@ -146,7 +148,18 @@
                         <div class="input inputAlert" rel="{{>tID}}">
 								<div class="time">{{>time}}</div>
 								<div class="notification">
-									<div>You have a pending payment of ${{>amount}} to {{>userName}} for "{{>description}}"</div>
+								{{if opt == "1"}}
+									<div> your friend '{{>userName}}' poked you {{>poked}} times for payment of amount ${{>amount}} towards "{{>description}}" which is scheduled on {{>isLater}} </div>
+								{{else opt == "2" }}
+									<div> your payment for "{{>description}}" is scheduled on {{>isLater}} for amount of ${{>amount}} to {{>userName}} </div>
+								{{else opt == "3" }}
+									<div> your friend '{{>userName}}' poked you {{>poked}} times for payment of amount ${{>amount}} towards "{{>description}}" </div>
+								{{else opt == "4" }}
+									<div> your have paid ${{>amount}} to {{>userName}} towards "{{>description}}" </div>
+								{{else opt == "0" }}
+									<div> You have a pending payment of ${{>amount}} to {{>userName}} for "{{>description}}" </div>
+								{{/if}}
+									
 								<div class="pay"><a href="javascript:void(0)" rel="{{>uID}}" >Pay Now</a></div> 
 								<div class="later"><a href="javascript:void(0)"  >i'll Pay Later</a></div>
 								
@@ -183,11 +196,13 @@
 		{{/if}}
 				<li class="userName">{{>userName}} </li>
 				<li class="currencyDetails"> ${{>eachAmount}} </li>
-				{{if isSeen == "0" && isPaid == "0"}}
-					<li class="description">your friend not seen your request. <span class="reminder"><a href="javascript:void(0)">Poke Again</a></span></li>				
-				{{else isPaid== "0" }}
-					<li class="description">payment pending.. <span class="remainder"><span class="reminder"><a href="javascript:void(0)">Poke Again</a></span></li>	
-				{{else}}
+				{{if opt == "0"}}
+					<li class="description">your friend not seen your request. <span class="reminder"><a href="javascript:void(0)"data-tID="{{:tID}}" data-suID="{{:suID}}" data-uID="{{:uID}}">Poke Again {{if poked !="0"}}({{:poked}}){{/if}}</a></a></span></li>				
+				{{else opt== "1" }}
+					<li class="description">payment pending. schedule to pay on {{:isLater}}<span class="reminder" ><a href="javascript:void(0);" data-tID="{{:tID}}" data-suID="{{:suID}}" data-uID="{{:uID}}">Poke Again {{if poked !="0"}}({{:poked}}){{/if}}</a></span></li>
+				{{else opt== "2" }}
+					<li class="description">payment pending.</li>
+				{{else opt== "3"}}
 					<li class="description">paid</li>	
 				{{/if}} 
 			
@@ -197,6 +212,15 @@
                           
 	</script>
 	
+	<script id="acntTransactionTmpl" type="text/html">
+				<li class="contentTrans" rel="{{:id}}">
+					
+					 <div class="time" style="float:left;width:70%;">{{>date.friendly}}</div> <div class="" style="float:right;width:30%;text-align:right;"><div class="btn btn-mini selectTrans" data-desc="{{>description.cleaned}}" data-amt="{{>amount.signed}}" data-tID="{{:id}}"><a href="javascript:void(0);" class="" >${{>amount.signed}}</a></div></div>						 
+					 <div class="title" style="float:left;width:70%;">{{>description.cleaned}}</div>
+					 
+		          </li>			
+		
+	</script>
 	<script id="transactionTmpl" type="text/html">
 	<div class="header" >
 				<div class="headerCurrency" >
@@ -272,6 +296,7 @@
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/bootstrap-datepicker.js" type="text/javascript"></script>
 	<script src="js/jquery.dateFormat-1.0.js" type="text/javascript"></script>
+	<script src="js/jquery.alerts.js" type="text/javascript"></script>
 	
 
 </body>
